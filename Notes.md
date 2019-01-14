@@ -41,7 +41,7 @@ To create a new project:
 
 "State" only works inside Class components not in functions. Use it with care beaucse the more "states" are manipulated the more the app gets unpredictable. This problem can be solved with Redux.
 
-By convention, we call "container" a component whose state can be manipulated (i.e. App.js) whereas a simple "component" is stateless. "Container" means it contains a part of the application state.
+By convention, we call "container" a stateful component i.e. whose state can be manipulated (e.g. App.js) whereas a simple "component" is stateless. "Container" means it contains a part of the application state. We want reduce the containers to the minimum to keep the app maintenable.
 
 ## Debug
 
