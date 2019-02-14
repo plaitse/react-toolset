@@ -43,7 +43,19 @@ To create a new project:
 
 By convention, we call "container" a stateful component i.e. whose state can be manipulated (e.g. App.js) whereas a simple "component" is stateless. "Container" means it contains a part of the application state. We want reduce the containers to the minimum to keep the app maintenable.
 
-## Debug
+## Conventions
+
+We use an uppercase letter for a JSX component file ```Button.js``` and a lowercase letter for a normal JavaScript ```index.js```;
+
+## Higher Order Compoent
+
+Instead of creating our own ```<Aux>``` component to wrap multiple elements, we can use a React built-in solution: ```<Fragment>``` with ```{Fragment}``` imported.
+
+To manager CSS classes on a HOC, the component needs to accept ```className={props.classes}```;
+
+## Lifecycle
+
+```useEffect()``` hook combines ```componentDidMount()``` and ```componentDidUpdate()```. It useful for HTTP requets for instance. To target once or several specific props, we can indicate it/them in the hook's parameter, seperated by a comma, in one array. We can declare this hook as many times as we wants in one class.
 
 ### Chrome developer tools
 

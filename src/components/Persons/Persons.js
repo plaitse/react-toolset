@@ -1,7 +1,7 @@
 import React from 'react';
 
 /* Components */
-import ErrorBoundary from '../../hoc/ErrorBoundary/ErrorBoundary';
+import ErrorBoundary from '../../hoc/ErrorBoundary';
 import Person from './Person/Person';
 
 const persons = (props) => props.persons.map((person, index) => {
