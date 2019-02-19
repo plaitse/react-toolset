@@ -75,3 +75,17 @@ To manager CSS classes on a HOC, the component needs to accept ```className={pro
 ## Props
 
 We can install ```prop-types``` to be able to verify our props.
+
+## Routing
+
+By adding the keyword ```exact``` to ```<Route path='/' exact render={() => <h1>Home</h1>} />``` or ```<NavLink to='/' exact>Home</NavLink>``` we specify that we only want this route to display this content. 
+
+To prevent a complete reload of the page, we use ```<Link to='/'>```. It is treated as an absolute path by default but can be set as relative path.
+
+Using ```<NavLink>``` instead of ```Link``` sets an active class to the current ```<a>``` tag we are visiting which allows styling the active link.
+
+The order of the routes which are set is important. To avoid calling two routes, we can use ```<Switch>``` and the routes inside it which will use the first route that matches. We can also let some of the routes outside ```<Switch>``` (before or after) to be sure they are analyzed everytime by the router no matter what.
+
+### Absolute vs Relative paths
+
+An absolute path is always appended to the domain. A relative paths takes the path we are currently on and appends the new path to it: ```pathname: this.props.match.url + '/contact'```.
