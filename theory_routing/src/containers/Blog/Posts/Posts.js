@@ -12,7 +12,6 @@ class Posts extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
     axios.get('/posts')
       .then(response => {
         const posts = response.data.slice(0, 4);
@@ -38,7 +37,7 @@ class Posts extends Component {
     let posts = <p style={{textAlign: 'center'}}>Something went wrong</p>;
     if (!this.state.error) {
       posts = this.state.posts.map(post => (
-        <Link to={'/' + post.id} key={post.id}>
+        <Link to={'/posts/' + post.id} key={post.id}>
           <Post
             title={post.title}
             author= {post.author}
@@ -51,7 +50,7 @@ class Posts extends Component {
         <section className='Posts'>
           {posts}
         </section>
-        <Route path={this.props.match}'/:id' exact component={FullPost} />
+        <Route path={this.props.match.url + '/:id'} exact component={FullPost} />
       </div>
     );
   }

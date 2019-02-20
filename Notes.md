@@ -74,7 +74,7 @@ To manager CSS classes on a HOC, the component needs to accept ```className={pro
 
 ## Props
 
-We can install ```prop-types``` to be able to verify our props.
+We can install ```prop-types``` to be able to verify props.
 
 ## Routing
 
@@ -85,6 +85,10 @@ To prevent a complete reload of the page, we use ```<Link to='/'>```. It is trea
 Using ```<NavLink>``` instead of ```Link``` sets an active class to the current ```<a>``` tag we are visiting which allows styling the active link.
 
 The order of the routes which are set is important. To avoid calling two routes, we can use ```<Switch>``` and the routes inside it which will use the first route that matches. We can also let some of the routes outside ```<Switch>``` (before or after) to be sure they are analyzed everytime by the router no matter what.
+
+We can redirect a user with ```Redirect to='/home' />``` or ```this.props.history.replace('/home')```.
+
+We can manage unfound pages with ```<Route render={() => <h1>Not found</h1>} />```. To avoid 404 on a deployed app, we need to specify the basename when setting the router: ```<BrowserRouter basename='/my-app'>```.
 
 ### Absolute vs Relative paths
 
