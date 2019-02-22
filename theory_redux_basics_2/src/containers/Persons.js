@@ -7,14 +7,9 @@ import * as actionTypes from '../store/actions';
 
 class Persons extends Component {
     render () {
-        const newPerson = {
-          id: Math.random(),
-          name: 'Test',
-          age: Math.floor( Math.random() * 40 )
-        }
         return (
             <div>
-                <AddPerson personAdded={() => this.props.personAddedHandler(newPerson)} />
+                <AddPerson personAdded={this.props.personAddedHandler} />
                 { this.props.persons.map(person => (
                   <Person 
                       key={person.id}
@@ -35,7 +30,7 @@ const mapStateToProps = state => {
   
   const mapDispatchToProps = dispatch => {
     return {
-      personAddedHandler: (newPerson) => dispatch({type: actionTypes.ADD, newPerson}),
+      personAddedHandler: (name, age) => dispatch({type: actionTypes.ADD, personData: {name, age}}),
       personDeletedHandler: (id) => dispatch({type: actionTypes.DELETE, personId: id})
     };
   };

@@ -214,6 +214,13 @@ For more info;
 
 We can install ```prop-types``` to be able to verify props.
 
+## Redux
+
+- Core concepts: https://redux.js.org/introduction/core-concepts
+- Actions: https://redux.js.org/basics/actions
+- Reducers: https://redux.js.org/basics/reducers
+- FAQ: https://redux.js.org/faq
+
 ## Routing
 
 By adding the keyword ```exact``` to ```<Route path='/' exact render={() => <h1>Home</h1>} />``` or ```<NavLink to='/' exact>Home</NavLink>``` we specify that we only want this route to display this content. 

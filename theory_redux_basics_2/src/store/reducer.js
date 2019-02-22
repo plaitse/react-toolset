@@ -7,9 +7,14 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.ADD:
+      const newPerson = {
+        id: Math.random(),
+        name: action.personData.name,
+        age: action.personData.age
+      }
       return {
         ...state,
-        persons: state.persons.concat(action.newPerson)
+        persons: state.persons.concat(newPerson)
       }
     case actionTypes.DELETE:
       return {
