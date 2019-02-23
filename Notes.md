@@ -216,6 +216,8 @@ We can install ```prop-types``` to be able to verify props.
 
 ## Redux
 
+In case ```const mapStateToProps``` is null but we still want to connect ```const mapDispatchToProps```, we need to pass them to ```connect()()``` this way: ```connect(null, mapDispatchToProps)(Component)```.
+
 - Core concepts: https://redux.js.org/introduction/core-concepts
 - Actions: https://redux.js.org/basics/actions
 - Reducers: https://redux.js.org/basics/reducers
